@@ -4,7 +4,7 @@ from urllib import urlencode, quote_plus
 
 '''
 urllib2 
-- urllib과 urllib2 차이 : urllib(URL만 수용), urllib2(URL 요청을 위한 헤더를 설정하기 위한 Request 객체 수용)
+- urllib과 urllib2 차이 : urllib(URL만 수용), urllib2(URL 요청을 위한 헤더를 설정하기 위한 Request 객체 수용) 
 
 
 '''
