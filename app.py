@@ -1,13 +1,6 @@
 # -*- coding: utf-8 -*- 
-from urllib2 import Request, urlopen
-from urllib import urlencode, quote_plus
-
-'''
-urllib2 
-- urllib과 urllib2 차이 : urllib(URL만 수용), urllib2(URL 요청을 위한 헤더를 설정하기 위한 Request 객체 수용) 
-
-
-'''
+from urllib.request import Request, urlopen
+from urllib.parse import urlencode, unquote, quote_plus
 
 # 사망교통사고정보서비스 URL
 url = 'http://apis.data.go.kr/B552061/trafficAccidentDeath/getRestTrafficAccidentDeath?'
@@ -23,7 +16,7 @@ param = urlencode({
     quote_plus('pageNo') : '1' 
 })
 
-request = Request(url + param)
+request = Request(url + unquote(param))
 request.get_method = lambda:'GET'
 response_body = urlopen(request).read()
 print(response_body)
